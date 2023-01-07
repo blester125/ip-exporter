@@ -23,6 +23,10 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
+          platforms: |
+            linux/amd64
+            linux/arm64
+            linux/arm/v7
           tags: |
             blester125/ip-exporter:${{ steps.tagName.outputs.tag }}
             blester125/ip-exporter:latest
