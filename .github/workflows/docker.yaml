@@ -9,6 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      # Build on more systems (respberry pi)
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Setup Docker Buildx
@@ -25,9 +26,11 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
+          # Build for desktop and raspberry pi
           platforms: |
             linux/amd64
             linux/arm/v7
+          # Create a versioned and a latest container
           tags: |
             blester125/ip-exporter:${{ steps.tagName.outputs.tag }}
             blester125/ip-exporter:latest
