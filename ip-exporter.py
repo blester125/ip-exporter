@@ -5,7 +5,7 @@ import logging
 import os
 import requests
 import time
-from prometheus_client import start_http_server, Guage
+from prometheus_client import start_http_server, Gauge
 
 
 parser = argparse.ArgumentParser(description="Public IP as Prometheus metrics.")
