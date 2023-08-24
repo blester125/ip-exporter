@@ -30,6 +30,7 @@ jobs:
           platforms: |
             linux/amd64
             linux/arm/v7
+            linux/arm/v8
           # Create a versioned and a latest container
           tags: |
             blester125/ip-exporter:${{ steps.tagName.outputs.tag }}
